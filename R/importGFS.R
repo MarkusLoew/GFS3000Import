@@ -10,7 +10,7 @@ ImportGFS <- function(file, import = "all") {
 # delimiter is ";"
 
   stopifnot(import %in% c("all", "MP"))
-  data <- read.csv(file = file,
+  data <- utils::read.csv(file = file,
               header = FALSE,
               sep = ";",
               skip = 2)
