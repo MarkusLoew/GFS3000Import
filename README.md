@@ -11,8 +11,10 @@ It returns list containing three data frames:
 
 Or, if the "import" argument is set to "MP", just a dataframe with the measurement points MP. Depends on the value for "import".
 
-Examples:
+## Examples:
 
-ImportGFS("light_response/2019-01-16_Pyc_1.csv", import = "none")
-ImportGFS("light_response/2019-01-16_Pyc_1.csv", import = "all")
-ImportGFS("light_response/2019-01-16_Pyc_1.csv", import = "MP")
+* ImportGFS("light_response/2019-01-16_Pyc_1.csv", import = "none")
+
+* ImportGFS("light_response/2019-01-16_Pyc_1.csv", import = "all")
+
+* ImportGFS("light_response/2019-01-16_Pyc_1.csv", import = "MP")
