@@ -14,8 +14,8 @@ Or, if the "import" argument is set to "MP", just a dataframe with the measureme
 
 ## Examples:
 
-* ImportGFS("light_response/2019-01-16_Pyc_1.csv", import = "none")
+* ImportGFS("light_response/2019-01-16_Pyc_1.csv", load = "none")
 
-* ImportGFS("light_response/2019-01-16_Pyc_1.csv", import = "all")
+* ImportGFS("light_response/2019-01-16_Pyc_1.csv", load = "all")
 
-* ImportGFS("light_response/2019-01-16_Pyc_1.csv", import = "MP")
+* ImportGFS("light_response/2019-01-16_Pyc_1.csv", load = "MP")
