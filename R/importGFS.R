@@ -10,7 +10,7 @@ ImportGFS <- function(file, load = "all") {
 # many rows data 
 # delimiter is ";"
 
-  stopifnot(load %in% c("all", "MP"))
+  stopifnot(load %in% c("all", "MP", "trace"))
   data <- utils::read.csv(file = file,
               header = FALSE,
               sep = ";",
@@ -31,15 +31,21 @@ ImportGFS <- function(file, load = "all") {
   data$filename <- basename(file)
 
 # convert and format datetime
+  if(load != "trace") {
   data$DateTime <- paste(data$Date, data$Time, sep = " ")
   data$DateTime <- as.POSIXct(data$DateTime)
+} else {
+  data$Time <- as.POSIXct(data$Time, format = "%H:%M:%S")
+}
 
 # separate Zeropoints and measurement points
+  if (load != "trace") {
   isZP <- grep("^ZP", data$Code)
   isMP <- grep("^MP", data$Code)
   ZP   <- data[isZP, ]
   data <- data[isMP, ]
-
+  }
+  
 # assemble output
   if (load == "all") {
      out <- list(ZP = ZP,
@@ -49,7 +55,9 @@ ImportGFS <- function(file, load = "all") {
   if (load == "MP") {
         out <- data
   }
-
+  if (load == "trace") {
+        out <- data
+  }
   return(out)
 }
 
