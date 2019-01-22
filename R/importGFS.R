@@ -21,6 +21,10 @@ ImportGFS <- function(file, load = "all") {
   header <- enc2utf8(header)
   header <- unlist(strsplit(header, ";"))
   names(data) <- header
+  
+  if (load == "trace") {
+    names(data) <- gsub('"', '', names(data))
+  }
 
   units <- readLines(con = file)
   units <- as.character(units[2])
