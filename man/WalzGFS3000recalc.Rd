@@ -2,7 +2,7 @@
 % Please edit documentation in R/recalcGFS.R
 \name{WalzGFS3000recalc}
 \alias{WalzGFS3000recalc}
-\title{Recalculate gas exchange parameters measured by a WALZ GFS3000 IRGA after a change of leaf area. Based on equations from the WALZ GFS3000 manual.}
+\title{Recalculate gas exchange parameters measured by a WALZ GFS3000 IRGA}
 \usage{
 WalzGFS3000recalc(data, Area = NA, inplace = FALSE)
 }
@@ -11,11 +11,11 @@ WalzGFS3000recalc(data, Area = NA, inplace = FALSE)
 
 \item{Area}{When Area = NA uses the vector Area in the data. If value is provided for Area it uses this value.}
 
-\item{inplace}{Logical. When FALSE, only returns a data frame with the paramters that changed (default). When TRUE, returns the full data with the recalculated data in place.}
+\item{inplace}{Logical. When FALSE, only returns a data frame with the parameters that changed (default). When TRUE, returns the full data with the recalculated data in place.}
 }
 \value{
 data.frame with the recalculated values.
 }
 \description{
-Recalculate gas exchange parameters measured by a WALZ GFS3000 IRGA after a change of leaf area. Based on equations from the WALZ GFS3000 manual.
+Recalculate leaf gas exchange, assimilation, evaporation, gH2O, VPD and ci after a change of leaf area. Based on equations from the WALZ GFS3000 manual.
 }

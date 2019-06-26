@@ -1,8 +1,10 @@
-#' Recalculate gas exchange parameters measured by a WALZ GFS3000 IRGA after a change of leaf area. Based on equations from the WALZ GFS3000 manual.
+#' Recalculate gas exchange parameters measured by a WALZ GFS3000 IRGA
 #' 
+#' Recalculate leaf gas exchange, assimilation, evaporation, gH2O, VPD and ci after a change of leaf area. Based on equations from the WALZ GFS3000 manual. 
+#'
 #' @param data Data frame with the gas exchange data
 #' @param Area When Area = NA uses the vector Area in the data. If value is provided for Area it uses this value.
-#' @param inplace Logical. When FALSE, only returns a data frame with the paramters that changed (default). When TRUE, returns the full data with the recalculated data in place.
+#' @param inplace Logical. When FALSE, only returns a data frame with the parameters that changed (default). When TRUE, returns the full data with the recalculated data in place.
 #' @return data.frame with the recalculated values.
 #' @export
 
@@ -77,11 +79,10 @@ MySVPt <- function(t) {
 #         w0 = wa
 #         LA = area
 # therefore
+#E <- (Flow * (dH2OMP - dH2OZP)) / Area * (1 - wa)
 E <- (data$Flow * ((data$dH2OMP * 0.000001) - (data$dH2OZP * 0.000001))) / ((Area * 0.1) * (1 - (data$wa * 0.000001)))
 E.div <- E / 1000
 #E <- E * 10
-#E <- (small$Flow * (small$dH2OMP - small$dH2OZP)) / small$Area * (1 - small$wa)
-
 
 # calculation of VPD
 # where SVP(Tleaf) is saturation vapour pressure at Tleaf following Goff / Gratch

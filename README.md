@@ -13,7 +13,7 @@ Installation:
 
 
 ## ImportGFS
-GFS3000 imports zero points and measurement points as separate data frames and the units of the measured parameters as a vector. The "import" argument can be set to either "all", for everything, or "MP", for measurement points only. Default is "all".
+GFS3000 imports zero points and measurement points as separate data frames and the units of the measured parameters as a vector. The "import" argument can be set to either "all", for everything, or "MP", for measurement points only. For the import of chart trace files (created by exporting from the graph screen in the GFS3000 control software), use "trace". "Default is "all".
 
 It returns list containing three data frames: 
 * "ZP" for Zeropoints, i.e. the calibration data, 
@@ -30,6 +30,7 @@ Or, if the "import" argument is set to "MP", just a dataframe with the measureme
 
 * ImportGFS("light_response/2019-01-16_Pyc_1.csv", load = "MP")
 
+* ImportGFS("2019-01-22_A_pyc_1_chart.csv", load = "trace")
 
 ## recalcGFS
 Recalculates gas exchange parameters based on a new leaf area. Equations from the GFS3000 manual are used. Rounding errors and deviations occur compared to recalculating data with the original GFS3000 software. Use with care. Equations from manual are included in the source code.
