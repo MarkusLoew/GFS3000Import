@@ -12,6 +12,11 @@ Installation:
 	devtools::install_github("MarkusLoew/GFS3000Import")
 
 
+*Acknowledgement*
+
+The development of this package was supported by ARC grant LP130101183.
+
+
 ## ImportGFS
 GFS3000 imports zero points and measurement points as separate data frames and the units of the measured parameters as a vector. The "import" argument can be set to either "all", for everything, or "MP", for measurement points only. For the import of chart trace files (created by exporting from the graph screen in the GFS3000 control software), use "trace". "Default is "all".
 
